@@ -8,9 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prepublish": "npm run build"
   },
-  "main": "./src/main.ts",
+  "main": "./dist/main.bundle.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/amitmahida92/ng4-loading-spinner.git"
@@ -22,9 +23,10 @@
   "keywords": [
     "angular",
     "angular 4",    
-    "typescript",
-    "webpack",
+    "typescript",    
     "spinner",
+    "ng",
+    "ng4",
     "loading spinner",
     "angular 4 loading spinner",
     "ng4-loading-spinner"

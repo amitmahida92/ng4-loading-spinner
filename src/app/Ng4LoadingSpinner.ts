@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injector } from '@angular/core';
+import { NgModule, Injector, ModuleWithProviders } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './spinner/spinner.component';
@@ -19,7 +19,17 @@ import { SpinnerService } from './spinner/spinner.service';
 })
 export class Ng4LoadingSpinner {
   static injector: Injector;
+
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: Ng4LoadingSpinner,
+      providers: [
+        SpinnerService
+      ]
+    };
+  }
   constructor(injector: Injector) {
     Ng4LoadingSpinner.injector = injector;
   }
+
 }

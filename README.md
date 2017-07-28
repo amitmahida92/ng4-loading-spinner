@@ -18,13 +18,12 @@ Angular 4 custom async loading spinner.
 
 1. Include `<app-spinner> </app-spinner>` to your root level component.
 
-e.g. 
-    `<app-component></app-component>`.
+2. Import `SpinnerService` to the component where you want to show the spinner.
 
-2. Inject `SpinnerService` to the component where you want to show the spinner.
-
-e.g. 
     `import { SpinnerService } from './spinner/spinner.service';`
+
+3. Inject dependancy 
+
     `constructor(`
         `private spinnerService: SpinnerService`
     `) { }`

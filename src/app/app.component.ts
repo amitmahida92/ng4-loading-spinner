@@ -13,16 +13,17 @@ export class AppComponent implements OnInit {
   constructor(
     private spinnerService: SpinnerService
   ) {
-    
+
   }
 
-  ngOnInit() {
-    
-    setTimeout(function() {
-      this.spinnerService.show();
-    }.bind(this), 1000);
+  ngOnInit() { }
 
-    setTimeout(function() {
+  showLoadingBar() {
+    setTimeout(function () {
+      this.spinnerService.show();
+    }.bind(this), 200);
+
+    setTimeout(function () {
       this.spinnerService.hide();
     }.bind(this), 3000);
 
