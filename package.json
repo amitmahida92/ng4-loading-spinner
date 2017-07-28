@@ -13,16 +13,21 @@
   "main": "./src/main.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/robisim74/angular-library-starter.git"
+    "url": "https://github.com/amitmahida92/ng4-loading-spinner.git"
   },
   "bugs": {
-    "url": "https://github.com/robisim74/angular-library-starter/issues"
+    "url": "https://github.com/amitmahida92/ng4-loading-spinner/issues"
   },
-  "homepage": "https://github.com/robisim74/angular-library-starter",
+  "homepage": "https://github.com/amitmahida92/ng4-loading-spinner",
   "keywords": [
     "angular",
-    "javascript",
-    "typescript"
+    "angular 4",    
+    "typescript",
+    "webpack",
+    "spinner",
+    "loading spinner",
+    "angular 4 loading spinner",
+    "ng4-loading-spinner"
   ],
   "private": false,
   "dependencies": {
@@ -62,6 +67,6 @@
   "author": {
     "email": "amit.mahida9292@gmail.com",
     "name": "Amit Mahida",
-    "url": ""
+    "url": "https://github.com/amitmahida92"
   }
 }
