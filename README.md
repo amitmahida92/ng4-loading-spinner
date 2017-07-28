@@ -16,21 +16,43 @@ Angular 4 custom async loading spinner.
 
 ## Usage 
 
-1. Include `<app-spinner> </app-spinner>` to your root level component.
+1. Import module to your application master module
 
-2. Import `SpinnerService` to the component where you want to show the spinner.
+    `import { Ng4LoadingSpinner } from 'ng4-loading-spinner';`
+
+2. Make an import entry as shown below
+
+    `imports: [ Ng4LoadingSpinner ]`
+
+3. Inject the *SpinnerService* &  to providers 
+
+        @NgModule({
+        declarations: [
+            AppComponent            
+        ],        
+        imports: [
+            BrowserModule,
+            Ng4LoadingSpinner
+        ],
+        providers: [SpinnerService],
+        bootstrap: [AppComponent]
+        });
+
+4. Include `<app-spinner> </app-spinner>` to your root level component.
+
+5. Import `SpinnerService` to the component where you want to show the spinner.
 
     `import { SpinnerService } from './spinner/spinner.service';`
 
-3. Inject dependancy 
+6. Inject dependancy 
 
     `constructor(`
         `private spinnerService: SpinnerService`
     `) { }`
 
-3. Use `this.spinnerService.show()` method to display the loading spinner.
+7. Use `this.spinnerService.show()` method to display the loading spinner.
 
-4. Use `this.spinnerService.hide()` method to hide the loading spinner once the processing is done.
+8. Use `this.spinnerService.hide()` method to hide the loading spinner once the processing is done.
 
 ## Example
 
@@ -39,13 +61,3 @@ Angular 4 custom async loading spinner.
         .subscribe(data => {
             this.spinnerService.hide();
         });
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-

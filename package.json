@@ -1,15 +1,15 @@
 {
   "name": "ng4-loading-spinner",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prepublish": "npm run build"
+    "prepublish": "ng build -sm"    
   },
   "main": "./dist/main.bundle.js",
   "repository": {
