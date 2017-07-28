@@ -1,17 +1,17 @@
 {
   "name": "ng4-loading-spinner",
-  "version": "1.0.7",
-  "license": "MIT",
+  "version": "1.0.10",
+  "description": "An async loading spinner component for Angular",  
+  "main": "index.js",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod --aot",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "prepublish": "ng build -sm"    
+    "clean": "rimraf .tmp && rimraf dist",
+    "transpile": "ngc",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/bundles/ng4-loading-spinner.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ng4-loading-spinner.umd.min.js",
+    "copy": "cpx './package-dist.json' dist && renamer --find 'package-dist.json' --replace 'package.json' ./dist/*",
+    "build": "npm run clean && npm run transpile && npm run package && npm run minify && npm run copy"
   },
-  "main": "./dist/main.bundle.js",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/amitmahida92/ng4-loading-spinner.git"
@@ -21,50 +21,34 @@
   },
   "homepage": "https://github.com/amitmahida92/ng4-loading-spinner",
   "keywords": [
+    "ng4-loading-spinner",
     "angular",
-    "angular 4",    
-    "typescript",    
+    "angular 2",
+    "angular 4",
+    "typescript",
     "spinner",
     "ng",
     "ng4",
     "loading spinner",
-    "angular 4 loading spinner",
-    "ng4-loading-spinner"
+    "angular 4 loading spinner"    
   ],
-  "private": false,
-  "dependencies": {
-    "@angular/animations": "^4.0.0",
+  "devDependencies": {
+    "@angular/compiler": "^4.3.2",
+    "@angular/compiler-cli": "^4.3.2",
+    "cpx": "^1.5.0",
+    "renamer": "^0.6.1",
+    "rimraf": "^2.5.4",
+    "rollup": "^0.41.4",
+    "typescript": "~2.3.3",
+    "uglify-js": "^2.7.5"
+  },
+  "dependencies": {    
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
-    "@angular/forms": "^4.0.0",
-    "@angular/http": "^4.0.0",
-    "@angular/platform-browser": "^4.0.0",
-    "@angular/platform-browser-dynamic": "^4.0.0",
-    "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
-  },
-  "devDependencies": {
-    "@angular/cli": "1.1.1",
-    "@angular/compiler-cli": "^4.0.0",
-    "@angular/language-service": "^4.0.0",
-    "@types/jasmine": "2.5.45",
-    "@types/node": "~6.0.60",
-    "codelyzer": "~3.0.1",
-    "jasmine-core": "~2.6.2",
-    "jasmine-spec-reporter": "~4.1.0",
-    "karma": "~1.7.0",
-    "karma-chrome-launcher": "~2.1.1",
-    "karma-cli": "~1.0.1",
-    "karma-jasmine": "~1.1.0",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-coverage-istanbul-reporter": "^1.2.1",
-    "protractor": "~5.1.2",
-    "ts-node": "~3.0.4",
-    "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
   },
   "author": {
     "email": "amit.mahida9292@gmail.com",

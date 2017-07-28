@@ -1,20 +1,50 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "baseUrl": "src",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2016",
-      "dom"
-    ]
-  }
+	"compilerOptions": {
+		"baseUrl": "",
+		"declaration": true,
+		"stripInternal": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"strictNullChecks": true,
+		"noImplicitAny": true,
+		"module": "es2015",
+		"moduleResolution": "node",
+		"paths": {
+			"@angular/core": [
+				"node_modules/@angular/core"
+			],
+			"@angular/common": [
+				"node_modules/@angular/common"
+			],
+			"rxjs/*": [
+				"node_modules/rxjs/*"
+			],			
+			"@angular/compiler": [
+				"node_modules/@angular/compiler"
+			],												
+			"core-js": [
+				"node_modules/core-js"
+			],			
+			"zone.js": [
+				"node_modules/zone.js"
+			]
+		},
+		"rootDir": "src",
+		"outDir": "dist",
+		"sourceMap": true,
+		"inlineSources": true,
+		"target": "es5",
+		"skipLibCheck": true,
+		"lib": [
+			"es2015",
+			"dom"
+		]
+	},
+	"files": [
+		"./src/index.ts"
+	],
+	"angularCompilerOptions": {
+		"strictMetadataEmit": true,
+		"genDir": ".tmp"
+	}
 }

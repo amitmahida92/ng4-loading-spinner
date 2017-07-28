@@ -9,10 +9,9 @@ Angular 4 custom async loading spinner.
 
     npm i ng4-loading-spinner --save
 
-## Description 
-
-    Custom loading spinner for Angular 2/4.
-    You can override the css for your customized spinner.
+## Description 	
+    
+	You can override the css for your customized spinner.
 
 ## Usage 
 
