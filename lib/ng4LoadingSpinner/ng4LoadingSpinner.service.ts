@@ -6,26 +6,26 @@ import 'rxjs/add/operator/share';
 /**
  * Injectable service
  * @export
- * @class SpinnerService
+ * @class Ng4LoadingSpinnerService
  */
 @Injectable()
-export class SpinnerService {
+export class Ng4LoadingSpinnerService {
     /**
      * Spinner observer
      * @private
      * @type {Observer<any>}
-     * @memberof SpinnerService
+     * @memberof Ng4LoadingSpinnerService
      */
     private spinnerObserver: Observer<any>;
     /**
      * Spinner observable
      * @type {Observable<any>}
-     * @memberof SpinnerService
+     * @memberof Ng4LoadingSpinnerService
      */
     public spinnerObservable: Observable<any>;
     /**
-     * Creates an instance of SpinnerService.
-     * @memberof SpinnerService
+     * Creates an instance of Ng4LoadingSpinnerService.
+     * @memberof Ng4LoadingSpinnerService
      */
     constructor() {
         this.spinnerObservable = new Observable(observer => {
@@ -35,7 +35,7 @@ export class SpinnerService {
     }
     /**
      * To show spinner
-     * @memberof SpinnerService
+     * @memberof Ng4LoadingSpinnerService
      */
     show() {                
         if (this.spinnerObserver) {
@@ -44,7 +44,7 @@ export class SpinnerService {
     }
     /**
      * To hide spinner
-     * @memberof SpinnerService
+     * @memberof Ng4LoadingSpinnerService
      */
     hide() {
         if (this.spinnerObserver) {

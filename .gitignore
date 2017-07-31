@@ -4,6 +4,7 @@
 /dist
 /.tmp
 /tmp
+/.rpt2_cache
 /out-tsc
 
 # dependencies

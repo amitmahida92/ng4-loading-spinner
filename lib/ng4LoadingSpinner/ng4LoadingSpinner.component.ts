@@ -1,56 +1,56 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SpinnerService } from './spinner.service';
+import { Ng4LoadingSpinnerService } from './ng4LoadingSpinner.service';
 import { Subscription } from 'rxjs/Subscription';
 
 /**
  * Component
  * @export
- * @class SpinnerComponent
+ * @class Ng4LoadingSpinnerComponent
  * @implements {OnInit}
  * @implements {OnDestroy}
  */
 @Component({
   selector: 'app-spinner',
-  templateUrl: './spinner.component.html',
-  styleUrls: ['./spinner.component.css']
+  templateUrl: './ng4LoadingSpinner.component.html',
+  styleUrls: ['./ng4LoadingSpinner.component.css']
 })
-export class SpinnerComponent implements OnInit, OnDestroy {
+export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
   /**
    * Subscription
    * @type {Subscription}
-   * @memberof SpinnerComponent
+   * @memberof Ng4LoadingSpinnerComponent
    */
   subscription: Subscription;
   /**
    * Enable/Disable spinner
-   * @memberof SpinnerComponent
+   * @memberof Ng4LoadingSpinnerComponent
    */
   showSpinner = true;
   /**
    * Constructor
-   * @param {SpinnerService} spinnerService Spinner Service
-   * @memberof SpinnerComponent
+   * @param {Ng4LoadingSpinnerService} spinnerService Spinner Service
+   * @memberof Ng4LoadingSpinnerComponent
    */
   constructor(
-    private spinnerService: SpinnerService
+    private spinnerService: Ng4LoadingSpinnerService
   ) { }
   /**
    * Init function
-   * @memberof SpinnerComponent
+   * @memberof Ng4LoadingSpinnerComponent
    */
   ngOnInit() {
     this.createServiceSubscription();
   }
   /**
    * Destroy function
-   * @memberof SpinnerComponent
+   * @memberof Ng4LoadingSpinnerComponent
    */
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
   /**
    * Create service subscription
-   * @memberof SpinnerComponent
+   * @memberof Ng4LoadingSpinnerComponent
    */
   createServiceSubscription() {
     this.subscription =
@@ -66,3 +66,4 @@ export class SpinnerComponent implements OnInit, OnDestroy {
       });
   }
 }
+

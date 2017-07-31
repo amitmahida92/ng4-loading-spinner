@@ -1,15 +1,22 @@
 {
+  "author": {
+    "email": "amit.mahida9292@gmail.com",
+    "name": "Amit Mahida",
+    "url": "https://github.com/amitmahida92"
+  },
   "name": "ng4-loading-spinner",
-  "version": "1.0.10",
-  "description": "An async loading spinner component for Angular",  
-  "main": "index.js",
+  "version": "1.0.12",
+  "description": "An async loading spinner component for Angular",
+  "main": "ng4-loading-spinner.umd.js",
+  "jsnext:main": "ng4-loading-spinner.esm.js",
+  "module": "ng4-loading-spinner.esm.js",
+  "types": "ng4-loading-spinner.d.ts",
   "scripts": {
-    "clean": "rimraf .tmp && rimraf dist",
-    "transpile": "ngc",
-    "package": "rollup -c",
-    "minify": "uglifyjs dist/bundles/ng4-loading-spinner.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ng4-loading-spinner.umd.min.js",
-    "copy": "cpx './package-dist.json' dist && renamer --find 'package-dist.json' --replace 'package.json' ./dist/*",
-    "build": "npm run clean && npm run transpile && npm run package && npm run minify && npm run copy"
+    "copy": "node tools/copy-package.js && node tools/cleanup-package.js",
+    "bundle": "rimraf dist && rollup -c rollup.config.umd.js && rollup -c rollup.config.esm.js && tsc && ngc",
+    "postbundle": "node tools/removecode.js",
+    "build": "npm run bundle && npm run copy",
+    "publish": "cd ./dist && npm publish"
   },
   "license": "MIT",
   "repository": {
@@ -30,29 +37,23 @@
     "ng",
     "ng4",
     "loading spinner",
-    "angular 4 loading spinner"    
+    "angular 4 loading spinner"
   ],
+  "dependencies": {
+    "@angular/core": "^4.3.2",
+    "rxjs": "^5.4.2",
+    "zone.js": "^0.8.16"
+  },
   "devDependencies": {
     "@angular/compiler": "^4.3.2",
     "@angular/compiler-cli": "^4.3.2",
-    "cpx": "^1.5.0",
-    "renamer": "^0.6.1",
-    "rimraf": "^2.5.4",
-    "rollup": "^0.41.4",
-    "typescript": "~2.3.3",
-    "uglify-js": "^2.7.5"
-  },
-  "dependencies": {    
-    "@angular/common": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
-    "@angular/core": "^4.0.0",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
-  },
-  "author": {
-    "email": "amit.mahida9292@gmail.com",
-    "name": "Amit Mahida",
-    "url": "https://github.com/amitmahida92"
+    "del": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "rollup-plugin-angular": "^0.4.4",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-typescript": "^0.8.1",
+    "rollup-plugin-typescript2": "^0.4.6",
+    "typescript": "^2.4.2"
   }
 }
