@@ -1,9 +1,10 @@
 # ng4-loading-spinner
-Angular 4 custom async loading spinner.
+Angular 4 custom async loading spinner with two simple methods for your asychronous calls.
+A new version will be there soon with custom loading template & interceptor input.
 
-## Note
+## Working Plunker Example
 
-*This is under maintenance for more configuration. Please use it after the note is removed.*
+[Go to example](https://plnkr.co/edit/I3MoLhxz1NO9PVtMTiaH?p=preview)
 
 ## Installation
 
