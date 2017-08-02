@@ -1,4 +1,4 @@
-# ng4-loading-spinner
+# ng4-loading-spinner (Your stars on this git repo can make others happy! :-) )
 Angular 4 custom async loading spinner with two simple methods for your asychronous calls.
 Custom loading template & loading text inputs are also available.
 
