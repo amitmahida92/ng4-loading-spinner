@@ -5,8 +5,8 @@
     "url": "https://github.com/amitmahida92"
   },
   "name": "ng4-loading-spinner",
-  "version": "1.0.16",
-  "description": "An async loading spinner component for Angular",
+  "version": "1.0.23",
+  "description": "An async loading spinner component for Angular with custom template",
   "main": "ng4-loading-spinner.umd.js",
   "jsnext:main": "ng4-loading-spinner.esm.js",
   "module": "ng4-loading-spinner.esm.js",
@@ -27,10 +27,13 @@
     "url": "https://github.com/amitmahida92/ng4-loading-spinner/issues"
   },
   "homepage": "https://github.com/amitmahida92/ng4-loading-spinner",
-  "keywords": [
+  "keywords": [    
     "ng4-loading-spinner",
+    "angular 4 loading bar",
     "angular spinner",
+    "angular loading bar",
     "async",
+    "async loading bar",
     "angular 4 spinner",
     "angular",
     "angular 2",

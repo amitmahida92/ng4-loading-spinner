@@ -7,6 +7,6 @@ import { Ng4LoadingSpinnerService } from './ng4LoadingSpinner.service';
   imports: [ ],
   declarations: [Ng4LoadingSpinnerComponent],
   exports: [Ng4LoadingSpinnerComponent],
-  providers: [Ng4LoadingSpinnerService]
+  providers: [Ng4LoadingSpinnerService]  
 })
 export class Ng4LoadingSpinnerModule { }

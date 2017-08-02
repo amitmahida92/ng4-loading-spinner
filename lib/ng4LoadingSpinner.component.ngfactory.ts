@@ -6,29 +6,30 @@
  /* tslint:disable */
 
 
-import * as i0 from './ng4LoadingSpinner.component.css.shim.ngstyle';
+import * as i0 from './ng4LoadingSpinner.component.css.ngstyle';
 import * as i1 from '@angular/core';
 import * as i2 from './ng4LoadingSpinner.component';
 import * as i3 from './ng4LoadingSpinner.service';
 const styles_Ng4LoadingSpinnerComponent:any[] = [i0.styles];
-export const RenderType_Ng4LoadingSpinnerComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
+export const RenderType_Ng4LoadingSpinnerComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:1,
     styles:styles_Ng4LoadingSpinnerComponent,data:{}});
 export function View_Ng4LoadingSpinnerComponent_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),8,'div',([] as any[]),
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'div',([] as any[]),
+      [[8,'className',0],[8,'innerHTML',1]],(null as any),(null as any),(null as any),
+      (null as any))),(_l()(),i1.ɵted((null as any),['    \n'])),(_l()(),i1.ɵted((null as any),
+      ['\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'h1',([] as any[]),
       [[8,'className',0]],(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          5,'div',[['class','la-ball-clip-rotate-multiple la-3x'],['style','color: #64d6e2']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          0,'div',([] as any[]),(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),0,'div',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n  '])),(_l()(),i1.ɵted((null as any),['\n']))],(null as any),(_ck,_v) => {
-    var _co:i2.Ng4LoadingSpinnerComponent = _v.component;
-    const currVal_0:any = (_co.showSpinner? 'hidden spinner': 'visible spinner');
-    _ck(_v,0,0,currVal_0);
-  });
+      (_l()(),i1.ɵted((null as any),[' ',' '])),(_l()(),i1.ɵted((null as any),['\n']))],
+      (null as any),(_ck,_v) => {
+        var _co:i2.Ng4LoadingSpinnerComponent = _v.component;
+        const currVal_0:any = (_co.showSpinner? 'hidden spinner center': 'visible spinner center');
+        const currVal_1:any = _co._template;
+        _ck(_v,0,0,currVal_0,currVal_1);
+        const currVal_2:any = (_co.showSpinner? 'hidden loading-text': 'visible loading-text');
+        _ck(_v,3,0,currVal_2);
+        const currVal_3:any = _co._loadingText;
+        _ck(_v,4,0,currVal_3);
+      });
 }
 export function View_Ng4LoadingSpinnerComponent_Host_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'app-spinner',
@@ -39,5 +40,6 @@ export function View_Ng4LoadingSpinnerComponent_Host_0(_l:any):i1.ɵViewDefiniti
   },(null as any));
 }
 export const Ng4LoadingSpinnerComponentNgFactory:i1.ComponentFactory<i2.Ng4LoadingSpinnerComponent> = i1.ɵccf('app-spinner',
-    i2.Ng4LoadingSpinnerComponent,View_Ng4LoadingSpinnerComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiRDovYW1pdC9teU5vZGVNb2R1bGVzL25nNExvYWRpbmdTcGlubmVyUmVwby9saWIvbmc0TG9hZGluZ1NwaW5uZXIuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0Q6L2FtaXQvbXlOb2RlTW9kdWxlcy9uZzRMb2FkaW5nU3Bpbm5lclJlcG8vbGliL25nNExvYWRpbmdTcGlubmVyLmNvbXBvbmVudC50cyIsIm5nOi8vL0Q6L2FtaXQvbXlOb2RlTW9kdWxlcy9uZzRMb2FkaW5nU3Bpbm5lclJlcG8vbGliL25nNExvYWRpbmdTcGlubmVyLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vRDovYW1pdC9teU5vZGVNb2R1bGVzL25nNExvYWRpbmdTcGlubmVyUmVwby9saWIvbmc0TG9hZGluZ1NwaW5uZXIuY29tcG9uZW50LnRzLk5nNExvYWRpbmdTcGlubmVyQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiPGRpdiBbY2xhc3NdPVwic2hvd1NwaW5uZXIgPyAnaGlkZGVuIHNwaW5uZXInIDogJ3Zpc2libGUgc3Bpbm5lcidcIj5cbiAgPGRpdiBzdHlsZT1cImNvbG9yOiAjNjRkNmUyXCIgY2xhc3M9XCJsYS1iYWxsLWNsaXAtcm90YXRlLW11bHRpcGxlIGxhLTN4XCI+XG4gICAgPGRpdj48L2Rpdj5cbiAgICA8ZGl2PjwvZGl2PlxuICA8L2Rpdj5cbjwvZGl2PiIsIjxhcHAtc3Bpbm5lcj48L2FwcC1zcGlubmVyPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7b0JDQUE7TUFBQTtNQUFrRSx5Q0FDaEU7VUFBQTtVQUFBO01BQXVFLDJDQUNyRTtVQUFBO1VBQUEsZ0JBQVcsMkNBQ1g7VUFBQTtVQUFBLDRDQUFXO1VBQUEsV0FDUDs7SUFKSDtJQUFMLFdBQUssU0FBTDs7OztvQkNBQTtNQUFBOzJDQUFBLFVBQUE7TUFBQTtJQUFBOzs7OyJ9
+    i2.Ng4LoadingSpinnerComponent,View_Ng4LoadingSpinnerComponent_Host_0,{template:'template',
+        loadingText:'loadingText'},{},([] as any[]));
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiRDovYW1pdC9teU5vZGVNb2R1bGVzL25nNExvYWRpbmdTcGlubmVyUmVwby9saWIvbmc0TG9hZGluZ1NwaW5uZXIuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0Q6L2FtaXQvbXlOb2RlTW9kdWxlcy9uZzRMb2FkaW5nU3Bpbm5lclJlcG8vbGliL25nNExvYWRpbmdTcGlubmVyLmNvbXBvbmVudC50cyIsIm5nOi8vL0Q6L2FtaXQvbXlOb2RlTW9kdWxlcy9uZzRMb2FkaW5nU3Bpbm5lclJlcG8vbGliL25nNExvYWRpbmdTcGlubmVyLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vRDovYW1pdC9teU5vZGVNb2R1bGVzL25nNExvYWRpbmdTcGlubmVyUmVwby9saWIvbmc0TG9hZGluZ1NwaW5uZXIuY29tcG9uZW50LnRzLk5nNExvYWRpbmdTcGlubmVyQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiPGRpdiBbY2xhc3NdPVwic2hvd1NwaW5uZXIgPyAnaGlkZGVuIHNwaW5uZXIgY2VudGVyJyA6ICd2aXNpYmxlIHNwaW5uZXIgY2VudGVyJ1wiIFtpbm5lckhUTUxdPVwiX3RlbXBsYXRlXCI+ICAgIFxuPC9kaXY+XG48aDEgW2NsYXNzXT1cInNob3dTcGlubmVyID8gJ2hpZGRlbiBsb2FkaW5nLXRleHQnIDogJ3Zpc2libGUgbG9hZGluZy10ZXh0J1wiPiB7e19sb2FkaW5nVGV4dH19IDwvaDE+XG4iLCI8YXBwLXNwaW5uZXI+PC9hcHAtc3Bpbm5lcj4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7O29CQ0FBO01BQUE7TUFBQSxnQkFBd0csMkNBQ2xHO01BQUEsU0FDTjtNQUFBO01BQTJFLDBDQUF1Qjs7O1FBRjdGO1FBQTJFO1FBQWhGLFdBQUssVUFBMkUsU0FBaEY7UUFFSTtRQUFKLFdBQUksU0FBSjtRQUEyRTtRQUFBOzs7O29CQ0YzRTtNQUFBOzJDQUFBLFVBQUE7TUFBQTtJQUFBOzs7OzsifQ==

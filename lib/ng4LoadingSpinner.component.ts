@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
 import { Ng4LoadingSpinnerService } from './ng4LoadingSpinner.service';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -12,9 +12,38 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-spinner',
   templateUrl: './ng4LoadingSpinner.component.html',
-  styleUrls: ['./ng4LoadingSpinner.component.css']
+  styleUrls: ['./ng4LoadingSpinner.component.css'],
+  inputs: ['template', 'loadingText'],
+  encapsulation: ViewEncapsulation.Native  // Use the native Shadow DOM to encapsulate our CSS
 })
 export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
+
+  _template: String = `
+  <div style="color: #64d6e2" class="la-ball-clip-rotate-multiple la-3x">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>`;
+  _loadingText: String = '';
+
+  @Input()
+  public set template(value: String) {
+    this._template = value;
+  }
+
+  public get template(): String {
+    return this._template;
+  }
+
+  @Input()
+  public set loadingText(value: String) {
+    this._loadingText = value;
+  }
+
+  public get loadingText(): String {
+    return this._loadingText;
+  }
+
   /**
    * Subscription
    * @type {Subscription}
@@ -54,7 +83,7 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
    */
   createServiceSubscription() {
     this.subscription =
-      this.spinnerService.spinnerObservable.subscribe(show => {        
+      this.spinnerService.spinnerObservable.subscribe(show => {
         if (show) {
           this.showSpinner = false;
         } else {

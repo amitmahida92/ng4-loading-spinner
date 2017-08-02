@@ -1,63 +1,116 @@
 # ng4-loading-spinner
 Angular 4 custom async loading spinner with two simple methods for your asychronous calls.
-A new version will be there soon with custom loading template & interceptor input.
+Custom loading template & loading text inputs are also available.
 
-## Working Plunker Example
+## Default Spinner Example
 
-[Go to example](https://plnkr.co/edit/I3MoLhxz1NO9PVtMTiaH?p=preview)
+[Open Plunker](https://plnkr.co/edit/I3MoLhxz1NO9PVtMTiaH?p=preview)
+
+## Custom Template Example
+
+[Open Plunker](https://plnkr.co/edit/gX8uvP2hb7DiE8Hs0a1R?p=preview)
 
 ## Installation
 
-    npm i ng4-loading-spinner --save
+`npm i ng4-loading-spinner --save`
 
 ## Description 	
     
-	You can override the css for your customized spinner.
+You can override the css for your customized spinner.
 
 ## Usage 
 
-1. Import module to your application master module
+> Import module to your application master module
 
-    `import { Ng4LoadingSpinner } from 'ng4-loading-spinner';`
+```javascript
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+```
 
-2. Make an import entry as shown below
+> Make an import entry as shown below
 
-    `imports: [ Ng4LoadingSpinner ]`
+```javascript
 
-3. Inject the *SpinnerService* &  to providers 
+imports: [ Ng4LoadingSpinnerModule ]
 
-        @NgModule({
-        declarations: [
-            AppComponent            
-        ],        
-        imports: [
-            BrowserModule,
-            Ng4LoadingSpinner
-        ],
-        providers: [SpinnerService],
-        bootstrap: [AppComponent]
-        });
+```
 
-4. Include `<app-spinner> </app-spinner>` to your root level component.
+> Include spinner component to your root level component.
 
-5. Import `SpinnerService` to the component where you want to show the spinner.
+```html
 
-    `import { SpinnerService } from './spinner/spinner.service';`
+<app-spinner> </app-spinner>
 
-6. Inject dependancy 
+```
 
-    `constructor(`
-        `private spinnerService: SpinnerService`
-    `) { }`
+> Import `Ng4LoadingSpinnerService` to the component where you want to show the spinner.
 
-7. Use `this.spinnerService.show()` method to display the loading spinner.
+```javascript
 
-8. Use `this.spinnerService.hide()` method to hide the loading spinner once the processing is done.
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+
+```
+
+> Inject dependancy 
+
+```javascript
+
+    constructor(
+        private spinnerService: Ng4LoadingSpinnerService
+    ) { }
+
+```
+
+> Use `show()` method to display the loading spinner.
+
+```javascript
+
+this.spinnerService.show();
+
+```
+
+> Use `hide()` method to hide the loading spinner once the processing is done.
+
+```javascript
+
+this.spinnerService.hide();
+
+```
 
 ## Example
+
+```javascript
 
     this.spinnerService.show();     
     this.http.get(GLOBAL['CONFIG_URL'])
         .subscribe(data => {
             this.spinnerService.hide();
         });
+
+```
+
+## Custom template
+
+> *Inputs* :
+
+> *[template]* : Accepts HTML which generates the loading spinner. You can apply additional css to design your own spinner, or can just pass *.gif image to show the loading spinner.
+
+> *[loadingText]* : Accepts a string to display the text while the loading process.
+
+> default *[loadingText]* text would be blank.
+
+> app.component.html : both are optional if not provided default would be shown.        
+
+```html    
+
+<app-spinner [template]="template" [loadingText]="'Please wait...'"></app-spinner>
+
+```    
+
+> app.component.ts    
+
+```javascript
+
+template: string =`<img src="http://pa1.narvii.com/5722/2c617cd9674417d272084884b61e4bb7dd5f0b15_hq.gif" />`
+
+```
+        

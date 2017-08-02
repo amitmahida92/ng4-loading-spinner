@@ -1,6 +1,3 @@
-<div [class]="showSpinner ? 'hidden spinner' : 'visible spinner'">
-  <div style="color: #64d6e2" class="la-ball-clip-rotate-multiple la-3x">
-    <div></div>
-    <div></div>
-  </div>
+<div [class]="showSpinner ? 'hidden spinner center' : 'visible spinner center'" [innerHTML]="_template">    
 </div>
+<h1 [class]="showSpinner ? 'hidden loading-text' : 'visible loading-text'"> {{_loadingText}} </h1>
