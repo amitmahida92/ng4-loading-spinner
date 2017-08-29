@@ -2,6 +2,8 @@
 Angular 4 custom async loading spinner with two simple methods for your asychronous calls.
 Custom loading template & loading text inputs are also available.
 
+> [Link to ng4-loading-spinner](https://www.npmjs.com/package/ng4-loading-spinner)
+
 > Your stars on this git repo can make others happy! :-) 
 
 ## Default Spinner Example
@@ -20,6 +22,7 @@ Custom loading template & loading text inputs are also available.
     
 > *You can override the css for your customized spinner.*
 > *You can also configure your own threshold to show spinner only for more expensive processes!*
+> *Supports latest Angular cli v1.3.2*
 
 ## Usage 
 
