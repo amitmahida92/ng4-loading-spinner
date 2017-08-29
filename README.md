@@ -1,6 +1,9 @@
 # ng4-loading-spinner 
 Angular 4 custom async loading spinner with two simple methods for your asychronous calls.
 Custom loading template & loading text inputs are also available.
+
+> [Link to ng4-loading-spinner](https://www.npmjs.com/package/ng4-loading-spinner)
+
 > Your stars on this git repo can make others happy! :-) 
 
 ## Default Spinner Example
@@ -17,7 +20,9 @@ Custom loading template & loading text inputs are also available.
 
 ## Description 	
     
-You can override the css for your customized spinner.
+> *You can override the css for your customized spinner.*
+> *You can also configure your own threshold to show spinner only for more expensive processes!*
+> *Supports latest Angular cli v1.3.2*
 
 ## Usage 
 
@@ -97,15 +102,18 @@ this.spinnerService.hide();
 
 > *[loadingText]* : Accepts a string to display the text while the loading process.
 
+> *[threshold]* : Accepts time in milliseconds for threshold through which you can conditionally show the spinner only for expensive calls. *Default is 500 ms.*
+
 > default *[loadingText]* text would be blank.
 
 > app.component.html : both are optional if not provided default would be shown.        
 
 ```html    
 
-<app-spinner [template]="template" [loadingText]="'Please wait...'"></app-spinner>
+<app-spinner [threshold]="2000" [template]="template" [loadingText]="'Please wait...'"></app-spinner>
 
 ```    
+> [threshold]="2000" : This will show the loading bar for the only processes which will take time more 2 secs.
 
 > app.component.ts    
 

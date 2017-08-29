@@ -26,22 +26,72 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
   </div>`;
   _loadingText: String = '';
 
-  @Input()
+  
+  /**
+   * 
+   * @type {Number}
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  _threshold: Number = 500;
+
+  
+
+  /**
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  @Input()  
   public set template(value: String) {
     this._template = value;
   }
 
+
+  /**
+   * @readonly
+   * @type {String}
+   * @memberof Ng4LoadingSpinnerComponent
+   */
   public get template(): String {
     return this._template;
   }
 
+  /**
+   * 
+   * @memberof Ng4LoadingSpinnerComponent
+   */
   @Input()
   public set loadingText(value: String) {
     this._loadingText = value;
   }
 
+  
+  /**
+   * 
+   * @readonly
+   * @type {String}
+   * @memberof Ng4LoadingSpinnerComponent
+   */
   public get loadingText(): String {
     return this._loadingText;
+  }
+
+
+  /**
+   * 
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  @Input()
+  public set threshold(value: Number) {
+    this._threshold = value;
+  }
+
+  /**
+   * 
+   * @readonly
+   * @type {Number}
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  public get threshold(): Number {
+    return this._threshold;
   }
 
   /**
@@ -54,7 +104,8 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
    * Enable/Disable spinner
    * @memberof Ng4LoadingSpinnerComponent
    */
-  showSpinner = true;
+  showSpinner = false;
+  
   /**
    * Constructor
    * @param {Ng4LoadingSpinnerService} spinnerService Spinner Service
@@ -63,6 +114,7 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
   constructor(
     private spinnerService: Ng4LoadingSpinnerService
   ) { }
+
   /**
    * Init function
    * @memberof Ng4LoadingSpinnerComponent
@@ -82,15 +134,17 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
    * @memberof Ng4LoadingSpinnerComponent
    */
   createServiceSubscription() {
+    let timer: any;
+
     this.subscription =
       this.spinnerService.spinnerObservable.subscribe(show => {
         if (show) {
-          this.showSpinner = false;
+          timer = setTimeout(function () {
+            this.showSpinner = show;
+          }.bind(this), this._threshold);
         } else {
-          const _thisNew = this;
-          setTimeout(function () {
-            _thisNew.showSpinner = true;
-          }, 1000);
+          clearTimeout(timer);
+          this.showSpinner = false;
         }
       });
   }
