@@ -139,12 +139,23 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
     this.subscription =
       this.spinnerService.spinnerObservable.subscribe(show => {
         if (show) {
+          if(timer)
+            return;
+
           timer = setTimeout(function () {
+            timer = null;
+
             this.showSpinner = show;
-          }.bind(this), this._threshold);
-        } else {
-          clearTimeout(timer);
-          this.showSpinner = false;
+          }.bind(_this), _this._threshold);
+        }
+        else {
+          if(timer){
+            clearTimeout(timer);
+
+            timer = null;
+          }
+
+          _this.showSpinner = false;
         }
       });
   }
