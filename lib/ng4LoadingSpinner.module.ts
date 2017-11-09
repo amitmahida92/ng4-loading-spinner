@@ -4,9 +4,9 @@ import { Ng4LoadingSpinnerComponent } from './ng4LoadingSpinner.component';
 import { Ng4LoadingSpinnerService } from './ng4LoadingSpinner.service';
 
 @NgModule({
-  imports: [ ],
+  imports: [],
   declarations: [Ng4LoadingSpinnerComponent],
   exports: [Ng4LoadingSpinnerComponent],
-  providers: [Ng4LoadingSpinnerService]  
+  providers: [Ng4LoadingSpinnerService]
 })
 export class Ng4LoadingSpinnerModule { }

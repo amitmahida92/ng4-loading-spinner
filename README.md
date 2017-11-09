@@ -90,7 +90,7 @@ this.spinnerService.hide();
 
 ```javascript
 
-    this.spinnerService.show();     
+    this.spinnerService.show();
     this.http.get(GLOBAL['CONFIG_URL'])
         .subscribe(data => {
             this.spinnerService.hide();
@@ -119,11 +119,10 @@ this.spinnerService.hide();
 ```    
 > [threshold]="2000" : This will show the loading bar for the only processes which will take time more 2 secs.
 
-> app.component.ts    
+> app.component.ts
 
 ```javascript
 
 template: string =`<img src="http://pa1.narvii.com/5722/2c617cd9674417d272084884b61e4bb7dd5f0b15_hq.gif" />`
 
 ```
-        
