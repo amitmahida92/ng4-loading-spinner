@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './ng4LoadingSpinner.component.html',
   styleUrls: ['./ng4LoadingSpinner.component.css'],
   inputs: ['template', 'loadingText'],
-  encapsulation: ViewEncapsulation.Native  // Use the native Shadow DOM to encapsulate our CSS
+  // encapsulation: ViewEncapsulation.Native  // Use the native Shadow DOM to encapsulate our CSS
 })
 export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
 
@@ -26,20 +26,20 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
   </div>`;
   _loadingText: String = '';
 
-  
+
   /**
-   * 
+   *
    * @type {Number}
    * @memberof Ng4LoadingSpinnerComponent
    */
   _threshold: Number = 500;
 
-  
+
 
   /**
    * @memberof Ng4LoadingSpinnerComponent
    */
-  @Input()  
+  @Input()
   public set template(value: String) {
     this._template = value;
   }
@@ -55,7 +55,7 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * 
+   *
    * @memberof Ng4LoadingSpinnerComponent
    */
   @Input()
@@ -63,9 +63,9 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
     this._loadingText = value;
   }
 
-  
+
   /**
-   * 
+   *
    * @readonly
    * @type {String}
    * @memberof Ng4LoadingSpinnerComponent
@@ -76,7 +76,7 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
 
 
   /**
-   * 
+   *
    * @memberof Ng4LoadingSpinnerComponent
    */
   @Input()
@@ -85,7 +85,7 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * 
+   *
    * @readonly
    * @type {Number}
    * @memberof Ng4LoadingSpinnerComponent
@@ -105,7 +105,7 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
    * @memberof Ng4LoadingSpinnerComponent
    */
   showSpinner = false;
-  
+
   /**
    * Constructor
    * @param {Ng4LoadingSpinnerService} spinnerService Spinner Service
@@ -149,4 +149,3 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
       });
   }
 }
-
