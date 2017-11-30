@@ -1,96 +1,135 @@
-import { Component, OnInit, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
 import { Ng4LoadingSpinnerService } from './ng4LoadingSpinner.service';
 import { Subscription } from 'rxjs/Subscription';
 
 /**
- * Component
+ * @description 
+ * @author Amit Mahida
  * @export
  * @class Ng4LoadingSpinnerComponent
- * @implements {OnInit}
  * @implements {OnDestroy}
  */
 @Component({
-  selector: 'app-spinner',
+  selector: 'ng4-loading-spinner',
   templateUrl: './ng4LoadingSpinner.component.html',
   styleUrls: ['./ng4LoadingSpinner.component.css'],
-  inputs: ['template', 'loadingText'],
-  // encapsulation: ViewEncapsulation.Native  // Use the native Shadow DOM to encapsulate our CSS
+  inputs: ['template', 'loadingText', 'zIndex'],
+  encapsulation: ViewEncapsulation.None  // Use the native Shadow DOM to encapsulate our CSS
 })
-export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
+export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
-  _template: String = `
+  /**
+   * @description Default loading spinner template
+   * @type {string}
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  _template: string = `
   <div style="color: #64d6e2" class="la-ball-clip-rotate-multiple la-3x">
     <div></div>
     <div></div>
     <div></div>
   </div>`;
-  _loadingText: String = '';
-
 
   /**
-   *
-   * @type {Number}
+   * @description Loading text
+   * @type {string}
    * @memberof Ng4LoadingSpinnerComponent
    */
-  _threshold: Number = 500;
-
+  _loadingText: string = '';
 
 
   /**
+   * @description Defines threhold for not to diplay if time is less than 500ms
+   * @type {number}
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  _threshold: number = 500;
+
+  /**
+   * @description Defines z-index property of the loading text
+   * @type {number}
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  _zIndex: number = 9999;
+
+  /**
+   * @description Sets z-index for input text
    * @memberof Ng4LoadingSpinnerComponent
    */
   @Input()
-  public set template(value: String) {
+  public set zIndex(value: number) {
+    this._zIndex = value;
+  }
+
+  /**
+   * @description returns z-index for input text 
+   * @readonly
+   * @type {number}
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  public get zIndex(): number {
+    return this._zIndex;
+  }
+
+  /**
+   * @description Accepts custom template
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  @Input()
+  public set template(value: string) {
     this._template = value;
   }
 
 
   /**
+   * @description Gives the current template
    * @readonly
-   * @type {String}
+   * @type {string}
    * @memberof Ng4LoadingSpinnerComponent
    */
-  public get template(): String {
+  public get template(): string {
     return this._template;
   }
 
+
   /**
-   *
+   * @description Accepts loading text string
    * @memberof Ng4LoadingSpinnerComponent
    */
   @Input()
-  public set loadingText(value: String) {
+  public set loadingText(value: string) {
     this._loadingText = value;
   }
 
 
   /**
-   *
+   * @description Gives loading text
    * @readonly
-   * @type {String}
+   * @type {string}
    * @memberof Ng4LoadingSpinnerComponent
    */
-  public get loadingText(): String {
+  public get loadingText(): string {
     return this._loadingText;
   }
 
 
   /**
-   *
+   * @description Accepts external threshold
    * @memberof Ng4LoadingSpinnerComponent
    */
   @Input()
-  public set threshold(value: Number) {
+  public set threshold(value: number) {
     this._threshold = value;
   }
 
+
   /**
-   *
+   * @description 
    * @readonly
-   * @type {Number}
+   * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
-  public get threshold(): Number {
+  public get threshold(): number {
     return this._threshold;
   }
 
@@ -100,8 +139,9 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
    * @memberof Ng4LoadingSpinnerComponent
    */
   subscription: Subscription;
+
   /**
-   * Enable/Disable spinner
+   * @description Show/hide spinner
    * @memberof Ng4LoadingSpinnerComponent
    */
   showSpinner = false;
@@ -113,15 +153,10 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
    */
   constructor(
     private spinnerService: Ng4LoadingSpinnerService
-  ) { }
-
-  /**
-   * Init function
-   * @memberof Ng4LoadingSpinnerComponent
-   */
-  ngOnInit() {
+  ) {
     this.createServiceSubscription();
   }
+
   /**
    * Destroy function
    * @memberof Ng4LoadingSpinnerComponent
@@ -137,7 +172,7 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
     let timer: any;
 
     this.subscription =
-      this.spinnerService.spinnerObservable.subscribe(show => {
+      this.spinnerService.getMessage().subscribe(show => {
         if (show) {
           if(timer)
             return;
@@ -146,16 +181,10 @@ export class Ng4LoadingSpinnerComponent implements OnInit, OnDestroy {
             timer = null;
 
             this.showSpinner = show;
-          }.bind(_this), _this._threshold);
-        }
-        else {
-          if(timer){
-            clearTimeout(timer);
-
-            timer = null;
-          }
-
-          _this.showSpinner = false;
+          }.bind(this), this.threshold);
+        } else {
+          clearTimeout(timer);
+          this.showSpinner = false;
         }
       });
   }

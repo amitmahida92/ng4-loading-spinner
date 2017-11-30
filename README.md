@@ -1,14 +1,18 @@
-# ng4-loading-spinner 
+# ng4-loading-spinner
+
 Angular 4 custom async loading spinner with two simple methods for your asychronous calls.
 Custom loading template & loading text inputs are also available.
 
-> [ Docs Link ](https://amitmahida92.github.io/ng4-loading-spinner) 
+[![support](https://img.shields.io/badge/Support-Angular%205.x-brightgreen.svg)](https://angular.io/docs)
+[![support](https://img.shields.io/badge/Support-Angular%204.x-brightgreen.svg)](https://v4.angular.io/docs)
+[![David](https://img.shields.io/david/peer/webcomponents/generator-element.svg)]()
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+
+
+> [Docs Link](https://amitmahida92.github.io/ng4-loading-spinner) 
 
 > [Link to ng4-loading-spinner](https://www.npmjs.com/package/ng4-loading-spinner)
 
-
-
-> Your stars on this git repo can make others happy! :-) 
 
 ## Default Spinner Example
 
@@ -26,7 +30,8 @@ Custom loading template & loading text inputs are also available.
     
 > *You can override the css for your customized spinner.*
 > *You can also configure your own threshold to show spinner only for more expensive processes!*
-> *Supports latest Angular cli v1.3.2*
+> *Supports latest Angular v5.x*
+> *Supports latest Angular cli v1.5.x*
 
 ## Usage 
 
@@ -40,7 +45,7 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 ```javascript
 
-imports: [ Ng4LoadingSpinnerModule ]
+imports: [ Ng4LoadingSpinnerModule.forRoot() ]
 
 ```
 
@@ -48,7 +53,7 @@ imports: [ Ng4LoadingSpinnerModule ]
 
 ```html
 
-<app-spinner> </app-spinner>
+<ng4-loading-spinner> </ng4-loading-spinner>
 
 ```
 
@@ -100,11 +105,11 @@ this.spinnerService.hide();
 
 ## Custom template
 
-> *Inputs* :
-
 > *[template]* : Accepts HTML which generates the loading spinner. You can apply additional css to design your own spinner, or can just pass *.gif image to show the loading spinner.
 
 > *[loadingText]* : Accepts a string to display the text while the loading process.
+
+> *[zIndex]* : Accepts a z-index css property for loading text.
 
 > *[threshold]* : Accepts time in milliseconds for threshold through which you can conditionally show the spinner only for expensive calls. *Default is 500 ms.*
 
@@ -114,9 +119,10 @@ this.spinnerService.hide();
 
 ```html    
 
-<app-spinner [threshold]="2000" [template]="template" [loadingText]="'Please wait...'"></app-spinner>
+<ng4-loading-spinner [threshold]="2000" [template]="template" [loadingText]="'Please wait...'" [zIndex]="9999"></ng4-loading-spinner>
 
 ```    
+
 > [threshold]="2000" : This will show the loading bar for the only processes which will take time more 2 secs.
 
 > app.component.ts
@@ -126,3 +132,7 @@ this.spinnerService.hide();
 template: string =`<img src="http://pa1.narvii.com/5722/2c617cd9674417d272084884b61e4bb7dd5f0b15_hq.gif" />`
 
 ```
+
+## License
+
+MIT © [Amit Mahida](mailto:amit.mahida9292@gmail.com)

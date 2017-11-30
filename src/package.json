@@ -1,0 +1,47 @@
+{
+  "name": "ng4-loading-spinner",
+  "version": "1.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amitmahida92/ng4-loading-spinner"
+  },
+  "author": {
+    "name": "Amit Mahida",
+    "email": "amit.mahida9292@gmail.com"
+  },
+  "keywords": [
+    "angular",
+    "ng4-loading-spinner",
+    "ngx-loading-spinner",
+    "ngx-spinner",
+    "angular 4 loading bar",
+    "angular spinner",
+    "angular loading bar",
+    "async",
+    "async loading bar",
+    "angular4 spinner",    
+    "angular5 spinner",    
+    "angular 2",
+    "angular 4",
+    "angular 5",
+    "typescript",
+    "spinner",
+    "ng",
+    "ng4",
+    "loading spinner"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amitmahida92/ng4-loading-spinner/issues"
+  },
+  "homepage": "https://github.com/amitmahida92/ng4-loading-spinner",
+  "main": "ng4-loading-spinner.umd.js",
+  "module": "ng4-loading-spinner.js",
+  "jsnext:main": "ng4-loading-spinner.js",
+  "typings": "ng4-loading-spinner.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^5.0.3",
+    "rxjs": "^5.5.2",
+    "zone.js": "^0.8.4"
+  }
+}
