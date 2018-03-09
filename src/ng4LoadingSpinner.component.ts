@@ -1,9 +1,9 @@
-import { Component, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ViewEncapsulation} from '@angular/core';
 import { Ng4LoadingSpinnerService } from './ng4LoadingSpinner.service';
 import { Subscription } from 'rxjs/Subscription';
 
 /**
- * @description 
+ * @description
  * @author Amit Mahida
  * @export
  * @class Ng4LoadingSpinnerComponent
@@ -13,8 +13,7 @@ import { Subscription } from 'rxjs/Subscription';
   selector: 'ng4-loading-spinner',
   templateUrl: './ng4LoadingSpinner.component.html',
   styleUrls: ['./ng4LoadingSpinner.component.css'],
-  inputs: ['template', 'loadingText', 'zIndex'],
-  encapsulation: ViewEncapsulation.None  // Use the native Shadow DOM to encapsulate our CSS
+  encapsulation: ViewEncapsulation.None
 })
 export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
@@ -23,19 +22,15 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
    * @type {string}
    * @memberof Ng4LoadingSpinnerComponent
    */
-  _template: string = `
-  <div style="color: #64d6e2" class="la-ball-clip-rotate-multiple la-3x">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>`;
+  _template = `
+  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
 
   /**
    * @description Loading text
    * @type {string}
    * @memberof Ng4LoadingSpinnerComponent
    */
-  _loadingText: string = '';
+  _loadingText = '';
 
 
   /**
@@ -43,26 +38,25 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
    * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
-  _threshold: number = 500;
+  _threshold = 500;
 
   /**
    * @description Defines z-index property of the loading text
    * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
-  _zIndex: number = 9999;
+  _zIndex = 9999;
 
   /**
    * @description Sets z-index for input text
    * @memberof Ng4LoadingSpinnerComponent
    */
-  @Input()
-  public set zIndex(value: number) {
+  @Input() public set zIndex(value: number) {
     this._zIndex = value;
   }
 
   /**
-   * @description returns z-index for input text 
+   * @description returns z-index for input text
    * @readonly
    * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
@@ -164,6 +158,7 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
   /**
    * Create service subscription
    * @memberof Ng4LoadingSpinnerComponent
@@ -174,6 +169,10 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
     this.subscription =
       this.spinnerService.getMessage().subscribe(show => {
         if (show) {
+          if (timer) {
+            return;
+          }
+
           timer = setTimeout(function () {
             this.showSpinner = show;
           }.bind(this), this.threshold);
