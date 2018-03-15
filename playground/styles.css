@@ -1,0 +1,6 @@
+:host ::ng-deep .custom-spinner-template {
+    height: 50% !important;
+    width: 50% !important;
+    top: 27% !important;
+    left: 27% !important;
+}
