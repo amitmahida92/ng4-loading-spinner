@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
 import { Ng4LoadingSpinnerService } from './ng4LoadingSpinner.service';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -172,8 +172,8 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
           if (timer) {
             return;
           }
-
           timer = setTimeout(function () {
+            timer = null;
             this.showSpinner = show;
           }.bind(this), this.threshold);
         } else {
@@ -183,4 +183,3 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
       });
   }
 }
-

@@ -3,8 +3,8 @@
 Angular 5 custom async loading spinner with two simple methods for your asychronous calls.
 Custom loading template & loading text inputs are also available.
 
-[![support](https://img.shields.io/badge/Support-Angular%205.x-brightgreen.svg)]()
-[![support](https://img.shields.io/badge/Support-Angular%204.x-brightgreen.svg)]()
+[![support](https://img.shields.io/badge/Support-Angular%205.x-brightgreen.svg)](https://angular.io/docs)
+[![support](https://img.shields.io/badge/Support-Angular%204.x-brightgreen.svg)](https://v4.angular.io/docs)
 [![David](https://img.shields.io/david/peer/webcomponents/generator-element.svg)]()
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 
