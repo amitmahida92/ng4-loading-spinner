@@ -177,7 +177,10 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
             this.showSpinner = show;
           }.bind(this), this.threshold);
         } else {
-          clearTimeout(timer);
+          if (timer) {
+            clearTimeout(timer);
+            timer = null;
+          }
           this.showSpinner = false;
         }
       });
