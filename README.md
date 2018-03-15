@@ -1,6 +1,6 @@
 # ng4-loading-spinner
 
-Angular 4 custom async loading spinner with two simple methods for your asychronous calls.
+Angular 5 custom async loading spinner with two simple methods for your asychronous calls.
 Custom loading template & loading text inputs are also available.
 
 [![support](https://img.shields.io/badge/Support-Angular%205.x-brightgreen.svg)]()
@@ -9,10 +9,9 @@ Custom loading template & loading text inputs are also available.
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 
 
-> [ Docs Link ](https://amitmahida92.github.io/ng4-loading-spinner) 
+> [ Docs Link ](https://amitmahida92.github.io/ng4-loading-spinner)
 
 > [Link to ng4-loading-spinner](https://www.npmjs.com/package/ng4-loading-spinner)
-
 
 ## Default Spinner Example
 
@@ -26,14 +25,14 @@ Custom loading template & loading text inputs are also available.
 
 `npm i ng4-loading-spinner --save`
 
-## Description 	
-    
+## Description
+
 > *You can override the css for your customized spinner.*
 > *You can also configure your own threshold to show spinner only for more expensive processes!*
 > *Supports latest Angular v5.x*
 > *Supports latest Angular cli v1.5.x*
 
-## Usage 
+## Usage
 
 > Import module to your application master module
 
@@ -65,7 +64,7 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 ```
 
-> Inject dependancy 
+> Inject dependancy
 
 ```javascript
 
@@ -95,7 +94,7 @@ this.spinnerService.hide();
 
 ```javascript
 
-    this.spinnerService.show();     
+    this.spinnerService.show();
     this.http.get(GLOBAL['CONFIG_URL'])
         .subscribe(data => {
             this.spinnerService.hide();
@@ -117,15 +116,15 @@ this.spinnerService.hide();
 
 > app.component.html : both are optional if not provided default would be shown.        
 
-```html    
+```html
 
 <ng4-loading-spinner [threshold]="2000" [template]="template" [loadingText]="'Please wait...'" [zIndex]="9999"></ng4-loading-spinner>
 
-```    
+```
 
 > [threshold]="2000" : This will show the loading bar for the only processes which will take time more 2 secs.
 
-> app.component.ts    
+> app.component.ts
 
 ```javascript
 
