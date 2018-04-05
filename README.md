@@ -64,7 +64,7 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 ```
 
-> Inject dependancy
+> Inject dependency
 
 ```javascript
 
