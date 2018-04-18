@@ -112,13 +112,15 @@ this.spinnerService.hide();
 
 > *[threshold]* : Accepts time in milliseconds for threshold through which you can conditionally show the spinner only for expensive calls. *Default is 500 ms.*
 
+> *[timeout]* : Accepts time in milliseconds to hide the spinner automatically. *Default is 5000 ms.*
+
 > default *[loadingText]* text would be blank.
 
 > app.component.html : both are optional if not provided default would be shown.        
 
 ```html
 
-<ng4-loading-spinner [threshold]="2000" [template]="template" [loadingText]="'Please wait...'" [zIndex]="9999"></ng4-loading-spinner>
+<ng4-loading-spinner [threshold]="2000" [timeout]="4000" [template]="template" [loadingText]="'Please wait...'" [zIndex]="9999"></ng4-loading-spinner>
 
 ```
 
