@@ -80,8 +80,9 @@ function inlineResourcesFromString(content, urlResolver) {
 function inlineTemplate(content, urlResolver) {
   return content.replace(/templateUrl:\s*'([^']+?\.html)'/g, function (m, templateUrl) {
     const templateFile = urlResolver(templateUrl);
+    let templateContent;
     try {
-      const templateContent = fs.readFileSync(templateFile, 'utf-8');
+      templateContent = fs.readFileSync(templateFile, 'utf-8');
     } catch (e) {
       return m;
     }
