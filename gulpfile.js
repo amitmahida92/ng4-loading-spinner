@@ -78,12 +78,15 @@ gulp.task('rollup:fesm', function () {
       // See "external" in https://rollupjs.org/#core-functionality
       external: [
         '@angular/core',
-        '@angular/common'
+        '@angular/common',
+        'rxjs'
       ],
 
-      // Format of generated bundle
-      // See "format" in https://rollupjs.org/#core-functionality
-      format: 'es'
+      output: {
+        // Format of generated bundle
+        // See "format" in https://rollupjs.org/#core-functionality
+        format: 'es'
+      }
     }))
     .pipe(gulp.dest(distFolder));
 });
@@ -111,27 +114,31 @@ gulp.task('rollup:umd', function () {
       // See "external" in https://rollupjs.org/#core-functionality
       external: [
         '@angular/core',
-        '@angular/common'
+        '@angular/common',
+        'rxjs'
       ],
+      output: {
+        // Format of generated bundle
+        // See "format" in https://rollupjs.org/#core-functionality
+        format: 'umd',
 
-      // Format of generated bundle
-      // See "format" in https://rollupjs.org/#core-functionality
-      format: 'umd',
+        // Export mode to use
+        // See "exports" in https://rollupjs.org/#danger-zone
+        exports: 'named',
 
-      // Export mode to use
-      // See "exports" in https://rollupjs.org/#danger-zone
-      exports: 'named',
+        // The name to use for the module for UMD/IIFE bundles
+        // (required for bundles with exports)
+        // See "name" in https://rollupjs.org/#core-functionality
+        name: 'ng4-loading-spinner',
 
-      // The name to use for the module for UMD/IIFE bundles
-      // (required for bundles with exports)
-      // See "name" in https://rollupjs.org/#core-functionality
-      name: 'ng4-loading-spinner',
-
-      // See "globals" in https://rollupjs.org/#core-functionality
-      globals: {
-        typescript: 'ts'
+        // See "globals" in https://rollupjs.org/#core-functionality
+        globals: {
+          typescript: 'ts',
+          rxjs: 'rxjs',
+          '@angular/core': '@angular/core'
+        }
       }
-
+      
     }))
     .pipe(rename('ng4-loading-spinner.umd.js'))
     .pipe(gulp.dest(distFolder));
