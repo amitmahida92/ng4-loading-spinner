@@ -1,13 +1,11 @@
 import { Component, OnInit, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
 import { Ng4LoadingSpinnerService } from './ng4LoadingSpinner.service';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 /**
  * @description
  * @author Amit Mahida
  * @export
- * @class Ng4LoadingSpinnerComponent
- * @implements {OnDestroy}
  */
 @Component({
   selector: 'ng4-loading-spinner',
@@ -19,7 +17,6 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
   /**
    * @description Default loading spinner template
-   * @type {string}
    * @memberof Ng4LoadingSpinnerComponent
    */
   _template = `
@@ -27,7 +24,6 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
   /**
    * @description Loading text
-   * @type {string}
    * @memberof Ng4LoadingSpinnerComponent
    */
   _loadingText = '';
@@ -35,14 +31,12 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
   /**
    * @description Defines threhold for not to diplay if time is less than 500ms
-   * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
   _threshold = 500;
 
   /**
    * @description Defines z-index property of the loading text
-   * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
   _zIndex = 9999;
@@ -58,7 +52,6 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
   /**
    * @description returns z-index for input text
    * @readonly
-   * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
   public get zIndex(): number {
@@ -78,7 +71,6 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
   /**
    * @description Gives the current template
    * @readonly
-   * @type {string}
    * @memberof Ng4LoadingSpinnerComponent
    */
   public get template(): string {
@@ -99,7 +91,6 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
   /**
    * @description Gives loading text
    * @readonly
-   * @type {string}
    * @memberof Ng4LoadingSpinnerComponent
    */
   public get loadingText(): string {
@@ -120,7 +111,6 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
   /**
    * @description 
    * @readonly
-   * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
   public get threshold(): number {
@@ -129,7 +119,6 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
   /**
    * Subscription
-   * @type {Subscription}
    * @memberof Ng4LoadingSpinnerComponent
    */
   subscription: Subscription;
@@ -142,7 +131,7 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
   /**
    * Constructor
-   * @param {Ng4LoadingSpinnerService} spinnerService Spinner Service
+   * @param spinnerService Spinner Service
    * @memberof Ng4LoadingSpinnerComponent
    */
   constructor(

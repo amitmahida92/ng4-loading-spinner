@@ -27,7 +27,7 @@
       // other libraries
       rxjs: 'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-      'ng4-loading-spinner': '../dist'
+      'ng4-loading-spinner': '../dist',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -39,8 +39,11 @@
           }
         }
       },
-      rxjs: {
-        defaultExtension: 'js'
+      rxjs: { main: 'index.js', defaultExtension: 'js', format: 'cjs' },
+      'rxjs/operators': {
+        main: 'index.js',
+        defaultExtension: 'js',
+        format: 'cjs'
       },
       'ng4-loading-spinner': {
         main: 'ng4-loading-spinner.umd.js',

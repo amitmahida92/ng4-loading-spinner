@@ -19,8 +19,8 @@
     "angular loading bar",
     "async",
     "async loading bar",
-    "angular4 spinner",    
-    "angular5 spinner",    
+    "angular4 spinner",
+    "angular5 spinner",
     "angular 2",
     "angular 4",
     "angular 5",
@@ -40,8 +40,8 @@
   "jsnext:main": "ng4-loading-spinner.js",
   "typings": "ng4-loading-spinner.d.ts",
   "peerDependencies": {
-    "@angular/core": "^5.0.3",
-    "rxjs": "^5.5.2",
+    "@angular/core": "^6.0.0",
+    "rxjs": "^6.1.0",
     "zone.js": "^0.8.4"
   }
 }
