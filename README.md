@@ -34,7 +34,8 @@ Custom loading template & loading text inputs are also available.
 
 ## New Updates
 
-> * `#loading-spinner-text / .loading-spinner-text` : Both id and class attributes given to spinner text component to customize the loading text css*
+> *`#loading-spinner-text / .loading-spinner-text` : Both id and class attributes given to spinner text component to customize the loading text css*
+> *[timeout] The time after which spinner will be hidden. Default is 5000 ms*
 
 ## Usage
 
