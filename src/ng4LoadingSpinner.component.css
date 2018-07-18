@@ -159,3 +159,7 @@
         transform: rotate(360deg);
     }
 }
+
+#spinner-text {
+    font-size: 26px;
+}

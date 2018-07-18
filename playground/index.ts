@@ -6,12 +6,13 @@ import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { Ng4LoadingSpinnerModule, Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { Ng4LoadingSpinnerModule, Ng4LoadingSpinnerService } from '../src';
 
 @Component({
   styleUrls: ['./styles.css'],
   selector: 'app',
-  template: `<button (click)="showSpinner()">Show Spinner</button> <ng4-loading-spinner [template]="template"  [threshold]="2000"></ng4-loading-spinner>`
+  template: `<button (click)="showSpinner()">Show Spinner</button> 
+  <ng4-loading-spinner [template]="template"  [threshold]="2000"></ng4-loading-spinner>`
 })
 class AppComponent {
 

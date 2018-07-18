@@ -1,5 +1,5 @@
 <div #spinnerContainer [class]="showSpinner ? 'visible spinner center' : 'hidden spinner center'" [innerHTML]="template">    
 </div>
-<h1 [style.zIndex]="zIndex" [class]="showSpinner ? 'visible loading-text' : 'hidden loading-text'"> {{loadingText}} </h1>
+<div id="spinner-text" [style.zIndex]="zIndex" [class]="showSpinner ? 'visible loading-text' : 'hidden loading-text'"> {{loadingText}} </div>
 
 
