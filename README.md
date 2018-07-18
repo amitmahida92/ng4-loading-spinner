@@ -32,6 +32,10 @@ Custom loading template & loading text inputs are also available.
 > *Supports latest Angular v5.x*
 > *Supports latest Angular cli v1.5.x*
 
+## New Updates
+
+> * `#loading-spinner-text / .loading-spinner-text` : Both id and class attributes given to spinner text component to customize the loading text css*
+
 ## Usage
 
 > Import module to your application master module

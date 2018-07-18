@@ -160,6 +160,10 @@
     }
 }
 
-#spinner-text {
+#loading-spinner-text {
+    font-size: 26px;
+}
+
+.loading-spinner-text {
     font-size: 26px;
 }
