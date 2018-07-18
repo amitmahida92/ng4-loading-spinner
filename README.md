@@ -1,8 +1,9 @@
 # ng4-loading-spinner
 
-Angular 5 custom async loading spinner with two simple methods for your asychronous calls.
+Angular 4/5/6 custom async loading spinner with two simple methods for your asychronous calls.
 Custom loading template & loading text inputs are also available.
 
+[![support](https://img.shields.io/badge/Support-Angular%206.x-brightgreen.svg)](https://angular.io/docs)
 [![support](https://img.shields.io/badge/Support-Angular%205.x-brightgreen.svg)](https://angular.io/docs)
 [![support](https://img.shields.io/badge/Support-Angular%204.x-brightgreen.svg)](https://v4.angular.io/docs)
 [![David](https://img.shields.io/david/peer/webcomponents/generator-element.svg)]()
@@ -28,13 +29,24 @@ Custom loading template & loading text inputs are also available.
 ## Description
 
 > *You can override the css for your customized spinner.*
+
 > *You can also configure your own threshold to show spinner only for more expensive processes!*
+
 > *Supports latest Angular v5.x*
+
+> *Supports latest Angular v6.x*
+
 > *Supports latest Angular cli v1.5.x*
+
+> *Supports latest Angular cli v6.x*
 
 ## New Updates
 
-> * `#loading-spinner-text / .loading-spinner-text` : Both id and class attributes given to spinner text component to customize the loading text css*
+> *`#loading-spinner-text / .loading-spinner-text` : Both id and class attributes given to spinner text component to customize the loading text css*
+
+> *[timeout] The time after which spinner will be hidden. Default is 5000 ms*
+
+> Resolved issues related to templates and loading text.
 
 ## Usage
 
