@@ -39,12 +39,11 @@
           }
         }
       },
-      rxjs: { main: 'index.js', defaultExtension: 'js', format: 'cjs' },
-      'rxjs/operators': {
+      rxjs: {
         main: 'index.js',
         defaultExtension: 'js',
         format: 'cjs'
-      },
+      },      
       'ng4-loading-spinner': {
         main: 'ng4-loading-spinner.umd.js',
         defaultExtension: 'js'
