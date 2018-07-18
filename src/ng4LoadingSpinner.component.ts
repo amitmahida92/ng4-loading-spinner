@@ -36,6 +36,13 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
   _threshold = 500;
 
   /**
+   * @description Defines timeout to hide after time 5000ms
+   * @type {number}
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  _timeout = 5000;
+
+  /**
    * @description Defines z-index property of the loading text
    * @memberof Ng4LoadingSpinnerComponent
    */
@@ -118,6 +125,26 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
   }
 
   /**
+   * @description Accepts external timeout
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  @Input()
+  public set timeout(value: number) {
+    this._timeout = value;
+  }
+
+
+  /**
+   * @description 
+   * @readonly
+   * @type {number}
+   * @memberof Ng4LoadingSpinnerComponent
+   */
+  public get timeout(): number {
+    return this._timeout;
+  }
+
+  /**
    * Subscription
    * @memberof Ng4LoadingSpinnerComponent
    */
@@ -153,23 +180,30 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
    * @memberof Ng4LoadingSpinnerComponent
    */
   createServiceSubscription() {
-    let timer: any;
+    let thresholdTimer: any;
+    let timeoutTimer: any;
 
     this.subscription =
       this.spinnerService.getMessage().subscribe(show => {
         if (show) {
-          if (timer) {
+          if (thresholdTimer) {
             return;
           }
-          timer = setTimeout(function () {
-            timer = null;
+          thresholdTimer = setTimeout(function() {
+            thresholdTimer = null;
             this.showSpinner = show;
+            timeoutTimer = setTimeout(function() {
+              timeoutTimer = null;
+              this.showSpinner = false;
+            }.bind(this), this.timeout);
           }.bind(this), this.threshold);
         } else {
-          if (timer) {
-            clearTimeout(timer);
-            timer = null;
+          if (thresholdTimer) {
+            clearTimeout(thresholdTimer);
+            thresholdTimer = null;
           }
+          clearTimeout(timeoutTimer);
+          timeoutTimer = null;
           this.showSpinner = false;
         }
       });

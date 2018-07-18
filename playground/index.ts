@@ -11,8 +11,8 @@ import { Ng4LoadingSpinnerModule, Ng4LoadingSpinnerService } from '../src';
 @Component({
   styleUrls: ['./styles.css'],
   selector: 'app',
-  template: `<button (click)="showSpinner()">Show Spinner</button> 
-  <ng4-loading-spinner [template]="template"  [threshold]="2000"></ng4-loading-spinner>`
+  template: `<button (click)="showSpinner()">Show Spinner</button>
+   <ng4-loading-spinner [template]="template"  [threshold]="2000" [timeout]="4000"></ng4-loading-spinner>`
 })
 class AppComponent {
 
@@ -27,14 +27,8 @@ class AppComponent {
   showSpinner() {
     this.spinnerService.show();
     setTimeout(() => {
-      this.spinnerService.show();
-    }, 1000);
-    setTimeout(() => {
       this.spinnerService.hide();
-    }, 4000);
-    setTimeout(() => {
-      this.spinnerService.hide();
-    }, 5000);
+    }, 10000);
   }
 
 }
