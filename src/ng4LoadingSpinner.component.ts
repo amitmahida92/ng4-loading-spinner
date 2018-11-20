@@ -40,7 +40,7 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
    * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
-  _timeout = 5000;
+  _timeout = 0;
 
   /**
    * @description Defines z-index property of the loading text
@@ -192,17 +192,19 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
           thresholdTimer = setTimeout(function() {
             thresholdTimer = null;
             this.showSpinner = show;
-            timeoutTimer = setTimeout(function() {
-              timeoutTimer = null;
-              this.showSpinner = false;
-            }.bind(this), this.timeout);
+            if (this.timeout !== 0) {
+              timeoutTimer = setTimeout(function() {
+                timeoutTimer = null;
+                this.showSpinner = false;
+              }.bind(this), this.timeout);
+            }
           }.bind(this), this.threshold);
         } else {
           if (thresholdTimer) {
             clearTimeout(thresholdTimer);
             thresholdTimer = null;
           }
-          clearTimeout(timeoutTimer);
+          if (timeoutTimer) clearTimeout(timeoutTimer);
           timeoutTimer = null;
           this.showSpinner = false;
         }
