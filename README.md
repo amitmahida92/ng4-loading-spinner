@@ -1,6 +1,6 @@
 # ng4-loading-spinner
 
-Angular 4/5/6 custom async loading spinner with two simple methods for your asychronous calls.
+Angular 4/5/6/7 custom async loading spinner with two simple methods for your asychronous calls.
 Custom loading template & loading text inputs are also available.
 
 [![support](https://img.shields.io/badge/Support-Angular%206.x-brightgreen.svg)](https://angular.io/docs)
@@ -36,9 +36,13 @@ Custom loading template & loading text inputs are also available.
 
 > *Supports latest Angular v6.x*
 
+> *Supports latest Angular v7.x*
+
 > *Supports latest Angular cli v1.5.x*
 
 > *Supports latest Angular cli v6.x*
+
+> *Supports latest Angular cli v7.x*
 
 ## New Updates
 
