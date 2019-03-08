@@ -19,8 +19,8 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
    * @description Default loading spinner template
    * @memberof Ng4LoadingSpinnerComponent
    */
-  _template = `
-  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
+  _template =
+    `<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
 
   /**
    * @description Loading text
@@ -37,7 +37,6 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
   /**
    * @description Defines timeout to hide after time 5000ms
-   * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
   _timeout = 0;
@@ -137,7 +136,6 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
   /**
    * @description
    * @readonly
-   * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
   public get timeout(): number {
