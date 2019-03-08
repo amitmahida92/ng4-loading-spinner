@@ -116,7 +116,7 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
 
   /**
-   * @description 
+   * @description
    * @readonly
    * @memberof Ng4LoadingSpinnerComponent
    */
@@ -135,7 +135,7 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
 
   /**
-   * @description 
+   * @description
    * @readonly
    * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
@@ -204,7 +204,9 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
             clearTimeout(thresholdTimer);
             thresholdTimer = null;
           }
-          if (timeoutTimer) clearTimeout(timeoutTimer);
+          if (timeoutTimer) {
+            clearTimeout(timeoutTimer);
+          }
           timeoutTimer = null;
           this.showSpinner = false;
         }
