@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
 import { Ng4LoadingSpinnerService } from './ng4LoadingSpinner.service';
 import { Subscription } from 'rxjs';
 
@@ -19,8 +19,8 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
    * @description Default loading spinner template
    * @memberof Ng4LoadingSpinnerComponent
    */
-  _template = `
-  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
+  _template =
+    `<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
 
   /**
    * @description Loading text
@@ -37,7 +37,6 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
   /**
    * @description Defines timeout to hide after time 5000ms
-   * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
   _timeout = 0;
@@ -116,7 +115,7 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
 
   /**
-   * @description 
+   * @description
    * @readonly
    * @memberof Ng4LoadingSpinnerComponent
    */
@@ -135,9 +134,8 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
 
 
   /**
-   * @description 
+   * @description
    * @readonly
-   * @type {number}
    * @memberof Ng4LoadingSpinnerComponent
    */
   public get timeout(): number {
@@ -189,11 +187,11 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
           if (thresholdTimer) {
             return;
           }
-          thresholdTimer = setTimeout(function() {
+          thresholdTimer = setTimeout(function () {
             thresholdTimer = null;
             this.showSpinner = show;
             if (this.timeout !== 0) {
-              timeoutTimer = setTimeout(function() {
+              timeoutTimer = setTimeout(function () {
                 timeoutTimer = null;
                 this.showSpinner = false;
               }.bind(this), this.timeout);
@@ -204,7 +202,9 @@ export class Ng4LoadingSpinnerComponent implements OnDestroy {
             clearTimeout(thresholdTimer);
             thresholdTimer = null;
           }
-          if (timeoutTimer) clearTimeout(timeoutTimer);
+          if (timeoutTimer) {
+            clearTimeout(timeoutTimer);
+          }
           timeoutTimer = null;
           this.showSpinner = false;
         }
